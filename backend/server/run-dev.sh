@@ -3,4 +3,4 @@ set -o allexport
 source ../../docker-compose-dev.env
 set +o allexport
 
-uvicorn main:app --reload --port ${SERVER_PORT} --host localhost
+python -m uvicorn main:app --reload --port ${SERVER_PORT} --host localhost
