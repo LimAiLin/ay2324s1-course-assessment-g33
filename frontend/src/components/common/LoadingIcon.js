@@ -8,7 +8,7 @@ function LoadingIcon({ text }) {
 	return (
 		<Box sx={{ display: "flex" }}>
 			{text !== "Cancel" ? (
-				<CircularProgress sx={{ color: "secondary.contrastText" }} />
+				<CircularProgress sx={{ color: "secondary.contrastText" }} data-testid="loading-icon" />
 			) : (
 				<Countdown
 					date={Date.now() + parseInt(MATCHMAKING_TIMEOUT)}
