@@ -1,4 +1,5 @@
 import { Button, CircularProgress } from "@mui/material";
+import React from "react";
 
 function ConsoleButton(props) {
 	const { title, icon, loading } = props;
@@ -7,7 +8,7 @@ function ConsoleButton(props) {
 			<div style={{ display: "flex", justifyContent: "center" }}>
 				{icon}
 				{loading ? (
-					<CircularProgress size={"24px"} sx={{ color: "secondary.contrastText" }} />
+					<CircularProgress size={"24px"} sx={{ color: "secondary.contrastText" }} data-testid="loading-icon"/>
 				) : (
 					title
 				)}
