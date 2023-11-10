@@ -1,7 +1,6 @@
-from fastapi import FastAPI
+from question_service.main import app
 from fastapi.testclient import TestClient
 
-app = FastAPI()
 client = TestClient(app)
 def test_get_questions():
     response = client.get("/api/v1/question")
