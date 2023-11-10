@@ -1,4 +1,5 @@
 import { Chip } from "@mui/material";
+import React from "react";
 
 function Tags(props) {
 	const { tags } = props;
