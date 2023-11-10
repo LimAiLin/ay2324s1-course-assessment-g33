@@ -26,7 +26,7 @@ describe("Console component", () => {
 
     // Assert that the Console component renders the correct content
     expect(screen.getByText("Success")).toBeInTheDocument();
-    expect(screen.getByText("Time:")).toBeInTheDocument();
+    expect(screen.getByText("Runtime:")).toBeInTheDocument();
     expect(screen.getByText("2s")).toBeInTheDocument();
     expect(screen.getByText("Memory:")).toBeInTheDocument();
     expect(screen.getByText("256")).toBeInTheDocument();
