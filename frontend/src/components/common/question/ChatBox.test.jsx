@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import ChatBox from "./ChatBox";
-import { ProblemContext } from "../../contexts/ProblemContext";
+import { ProblemContext } from "../../../contexts/ProblemContext";
 
 test("ChatBox renders messages correctly", () => {
   // Mock the context value
