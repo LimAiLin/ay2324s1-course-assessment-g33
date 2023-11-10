@@ -1,11 +1,7 @@
 {
   "dependencies": {
-    "@babel/preset-env": "^7.23.3",
-    "babel-jest": "^29.7.0",
     "firebase": "^10.5.0",
     "firebase-tools": "^12.7.0",
-    "firestore": "^1.1.6",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.1.1"
+    "firestore": "^1.1.6"
   }
 }
