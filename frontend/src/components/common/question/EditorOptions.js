@@ -1,16 +1,19 @@
-import { EDITOR_SUPPORTED_LANGUAGES, EDITOR_SUPPORTED_THEMES } from "../../../utils/constants";
+import {
+    EDITOR_SUPPORTED_LANGUAGES,
+    EDITOR_SUPPORTED_THEMES,
+} from "../../../utils/constants";
 import CustomSelect from "./CustomSelect";
 
 function EditorOptions({
-	language,
-	handleLanguageChange,
-	handleThemeChange,
-	editorTheme,
-	children,
+    language,
+    handleLanguageChange,
+    handleThemeChange,
+    editorTheme,
+    children,
 }) {
 	return (
 		<div className="editor-options">
-			<div>
+			<div id="select">
 				<CustomSelect
 					title={"Language"}
 					list={EDITOR_SUPPORTED_LANGUAGES}
@@ -19,10 +22,11 @@ function EditorOptions({
 					data-testid="language-select"
 				/>
 			</div>
-			<div>
+			<div id="select">
 				<CustomSelect
 					title={"Theme"}
-					list={Object.entries(EDITOR_SUPPORTED_THEMES).map(([themeId, themeName]) => ({
+					list={Object.entries(EDITOR_SUPPORTED_THEMES)
+                        .map(([themeId, themeName]) => ({
 						name: themeName,
 						value: themeId,
 						key: themeId,
