@@ -3,6 +3,7 @@ import { loader } from "@monaco-editor/react";
 import { EDITOR_SUPPORTED_THEMES } from "./constants";
 import PropTypes from "prop-types";
 import { Box } from "@mui/material";
+import React from "react";
 
 export function dateDiffInDays(a, b) {
     const _MS_PER_DAY = 1000 * 60 * 60 * 24;

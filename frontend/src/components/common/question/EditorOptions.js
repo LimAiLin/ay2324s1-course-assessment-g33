@@ -16,6 +16,7 @@ function EditorOptions({
 					list={EDITOR_SUPPORTED_LANGUAGES}
 					value={language}
 					handleChange={handleLanguageChange}
+					data-testid="language-select"
 				/>
 			</div>
 			<div>
@@ -28,6 +29,7 @@ function EditorOptions({
 					}))}
 					value={editorTheme}
 					handleChange={handleThemeChange}
+					data-testid="theme-select"
 				/>
 			</div>
 			{children}

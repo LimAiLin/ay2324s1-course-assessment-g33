@@ -17,7 +17,7 @@ export default function CustomSelect(props) {
 	};
 
 	return (
-		<FormControl sx={{ m: 0, minWidth: 120, backgroundColor: "secondary.main" }} size="small">
+		<FormControl sx={{ m: 0, minWidth: 120, backgroundColor: "secondary.main" }} size="small" data-testid="custom-select-container">
 			<Select
 				id="select-small-ide-"
 				value={JSON.stringify(value)}
@@ -25,6 +25,7 @@ export default function CustomSelect(props) {
 				MenuProps={MenuProps}
 				displayEmpty
 				title={`Select ${title}`}
+				data-testid="custom-select"
 			>
 				{list.map((value) => {
 					return (
