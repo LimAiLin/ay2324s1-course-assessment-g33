@@ -88,7 +88,7 @@ jobs:
 
     - name: Create ConfigMap from Secret
       run: |
-        echo $SECRET | base64 --decode > k8/secret.yaml
+        echo $SECRET | base64 --decode > k8/test-secret.yaml
       env:
         SECRET: ${{ secrets.SECRET }}
 
