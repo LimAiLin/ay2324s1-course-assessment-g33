@@ -9,7 +9,7 @@ chrome_options.add_argument("--headless")
 
 def test_login_success():
     driver = webdriver.Chrome(options=chrome_options)
-    driver.get('https://limailin.github.io/peercode-react/login')
+    driver.get('https://peercode.net/login')
     wait = WebDriverWait(driver, 10) 
 
     try:
@@ -22,14 +22,14 @@ def test_login_success():
         login_button.click()
 
         # Wait for the next page to load after login (change the expected condition based on the next page)
-        WebDriverWait(driver, 10).until(EC.url_to_be('https://limailin.github.io/peercode-react'))
-        assert driver.current_url == 'https://limailin.github.io/peercode-react', "Login failed"
+        WebDriverWait(driver, 10).until(EC.url_to_be('https://peercode.net'))
+        assert driver.current_url == 'https://peercode.net', "Login failed"
     finally:
         driver.quit()
 
 def test_login_failure():
     driver = webdriver.Chrome(options=chrome_options)
-    driver.get('https://limailin.github.io/peercode-react/login')
+    driver.get('https://peercode.net/login')
     wait = WebDriverWait(driver, 10) 
 
     try:
@@ -46,14 +46,14 @@ def test_login_failure():
 
         # Wait for the next page to load after login
         WebDriverWait(driver, 10)
-        assert driver.current_url == 'https://limailin.github.io/peercode-react/login'
+        assert driver.current_url == 'https://peercode.net/login'
 
     finally:
         driver.quit()
 
 def test_redirect_to_signup():
     driver = webdriver.Chrome(options=chrome_options)
-    driver.get('https://limailin.github.io/peercode-react/login')
+    driver.get('https://peercode.net/login')
     wait = WebDriverWait(driver, 10)
 
     try:
@@ -66,8 +66,8 @@ def test_redirect_to_signup():
         # Simulate a click using JavaScript
         driver.execute_script("arguments[0].click();", new_member_link)
 
-        WebDriverWait(driver, 10).until(EC.url_to_be('https://limailin.github.io/peercode-react/signup'))
+        WebDriverWait(driver, 10).until(EC.url_to_be('https://peercode.net/signup'))
 
-        assert driver.current_url == 'https://limailin.github.io/peercode-react/signup', "Redirect to /signup failed" 
+        assert driver.current_url == 'https://peercode.net/signup', "Redirect to /signup failed" 
     finally:
         driver.quit()
