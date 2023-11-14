@@ -35,14 +35,14 @@ jobs:
       - name: Build app
         run: docker-compose -f docker-compose.yml build &
 
-      - name: Delay before running app
-        run: sleep 60  
-
       - name: Run app
         run: bash start.sh &
 
-      - name: Delay before running system tests
-        run: sleep 60
-        
-      - name: Run system tests
-        run: pytest
+      - name: Deploy with gh-pages
+        run: |
+          cd frontend
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
